@@ -1,0 +1,18 @@
+<apex:page >
+    <script type="text/javascript">
+        var app = angular.module("Services", [])
+        
+        app.factory("SLDS_ProgressIndicatorIndexServices", ["$rootScope", function($rootScope) {
+
+            function init(scope) {
+                console.log('Hello Salesforce Developers!!');
+            }
+
+            return {
+                init: function(scope) {
+                    return init(scope);
+                }
+            };
+        }]);
+    </script>
+</apex:page>

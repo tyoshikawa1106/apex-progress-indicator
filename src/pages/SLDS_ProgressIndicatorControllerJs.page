@@ -1,0 +1,36 @@
+<apex:page >
+    <script type="text/javascript">
+        (function(){
+            "use strict";
+            
+            var app = angular.module("Controllers", ["Services"]);
+        
+            app.controller("SLDS_ProgressIndicatorIndexController", ["$scope", "$routeParams", "SLDS_ProgressIndicatorIndexServices", function($scope, $routeParams, helper) {
+                
+                helper.init($scope);
+
+                $scope.progress = 0;
+                $scope.selectStage = '';
+                
+                $scope.changeSelectList = function(event) {
+                    if ($scope.selectStage == 'STEP 1') {
+                        $scope.progress = 0;
+                    } else if ($scope.selectStage == 'STEP 2') {
+                        $scope.progress = 25;
+                    } else if ($scope.selectStage == 'STEP 3') {
+                        $scope.progress = 50;
+                    } else if ($scope.selectStage == 'STEP 4') {
+                        $scope.progress = 75;
+                    } else if ($scope.selectStage == 'STEP 5') {
+                        $scope.progress = 100;
+                    } else {
+                        $scope.progress = 0;
+                    }
+
+                    console.log('Target = ' + $scope.selectStage);
+                    console.log('progress = ' + $scope.progress);
+                };
+            }]);
+        })();
+    </script>
+</apex:page>

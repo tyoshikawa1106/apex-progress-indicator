@@ -1,0 +1,87 @@
+<apex:page showHeader="false" standardStylesheets="false">
+    <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="slds">
+            <div class="slds-m-around--small">
+                <div class="slds-box">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="select-01">Stage</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <select id="select-01" class="slds-select" ng-model="selectStage" ng-change="changeSelectList()">
+                                    <option>STEP 1</option>
+                                    <option>STEP 2</option>
+                                    <option>STEP 3</option>
+                                    <option>STEP 4</option>
+                                    <option>STEP 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-is-relative">
+                    <div class="slds-progress" style="width: 100%; position:absolute; left: 20px; top: 50px;">
+                        <ol class="slds-progress__list">
+                            <li class="slds-progress__item slds-is-relative" ng-class="{'slds-is-active' : (selectStage == 'STEP 1')}">
+                                <button class="slds-button slds-progress__marker" aria-describedby="step-1-tooltip">
+                                    <svg class="slds-button__icon slds-hide" aria-hidden="true" ng-class="{'slds-show' : selectStage == 'STEP 2' || selectStage == 'STEP 3' || selectStage == 'STEP 4' || selectStage == 'STEP 5'}">
+                                        <use xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#success')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">STEP 1</span>
+                                </button>
+                                <div style="position:absolute; top:25px; left: -150x; color: #1589ee; text-align: center;">
+                                    STEP 1
+                                </div>
+                            </li>
+                            <li class="slds-progress__item slds-is-relative" ng-class="{'slds-is-active' : (selectStage == 'STEP 2')}">
+                                <button class="slds-button slds-progress__marker" aria-describedby="step-2-tooltip">
+                                    <svg class="slds-button__icon slds-hide" aria-hidden="true" ng-class="{'slds-show' : selectStage == 'STEP 3' || selectStage == 'STEP 4' || selectStage == 'STEP 5'}">
+                                        <use xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#success')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">STEP 2</span>
+                                </button>
+                                <div style="position:absolute; top:25px; left: -10px; color: #1589ee; text-align: center;">
+                                    STEP 2
+                                </div>
+                            </li>
+                            <li class="slds-progress__item slds-is-relative" ng-class="{'slds-is-active' : (selectStage == 'STEP 3')}">
+                                <button class="slds-button slds-progress__marker" aria-describedby="step-3-tooltip">
+                                    <svg class="slds-button__icon slds-hide" aria-hidden="true" ng-class="{'slds-show' : selectStage == 'STEP 4' || selectStage == 'STEP 5'}">
+                                        <use xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#success')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">STEP 3</span>
+                                </button>
+                                <div style="position:absolute; top:25px; left: -10px; color: #1589ee; text-align: center;">
+                                    STEP 3
+                                </div>
+                            </li>
+                            <li class="slds-progress__item slds-is-relative" ng-class="{'slds-is-active' : (selectStage == 'STEP 4')}">
+                                <button class="slds-button slds-progress__marker" aria-describedby="step-4-tooltip">
+                                    <svg class="slds-button__icon slds-hide" aria-hidden="true" ng-class="{'slds-show' : selectStage == 'STEP 5'}">
+                                        <use xlink:href="{!URLFOR($Resource.SLDS221, '/assets/icons/utility-sprite/svg/symbols.svg#success')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">STEP 4</span>
+                                </button>
+                                <div style="position:absolute; top:25px; left: -10px; color: #1589ee; text-align: center;">
+                                    STEP 4
+                                </div>
+                            </li>
+                            <li class="slds-progress__item slds-is-relative" ng-class="{'slds-is-active' : (selectStage == 'STEP 5')}">
+                                <button class="slds-button slds-progress__marker" aria-describedby="step-5-tooltip">
+                                    <span class="slds-assistive-text">STEP 5</span>
+                                </button>
+                                <div style="position:absolute; top:25px; left: -10px; color: #1589ee; text-align: center;">
+                                    STEP 5
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="slds-progress-bar">
+                            <span class="slds-progress-bar__value" style="width:{{progress}}%;">
+                                <span class="slds-assistive-text">Progress: {{progress}}%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

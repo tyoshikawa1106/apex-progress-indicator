@@ -1,0 +1,35 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+    <html lang="ja">
+        <head>
+            <meta charset="UTF-8"/>
+            <title><apex:insert name="title" /></title>
+            <!-- Meta -->
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="format-detection" content="telephone=no"/>
+            <meta name="description" content=""/>
+            <meta name="keywords" content=""/>
+            <!-- Lightning Design System -->
+            <apex:stylesheet value="{!URLFOR($Resource.SLDS221, 'assets/styles/salesforce-lightning-design-system.css')}" />
+            <!-- AngularJS -->
+            <apex:includeScript value="{!URLFOR($Resource.AngularJs, 'libs/angular.min.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.AngularJs, 'libs/angular-route.min.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.AngularJs, 'libs/angular-messages.min.js')}" />
+            <style>
+             ol li {
+                margin-left: 0;
+             }
+            </style>
+        </head>
+        <body>
+            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="vf-page">
+                <div ng-app="myApp">
+                    <div ng-view="true"></div>
+                </div>
+            </div>
+            <apex:include pageName="SLDS_ProgressIndicatorAppJs" />
+            <apex:include pageName="SLDS_ProgressIndicatorControllerJs" />
+            <apex:include pageName="SLDS_ProgressIndicatorServicesJs" />
+        </body>
+    </html>
+</apex:page>
